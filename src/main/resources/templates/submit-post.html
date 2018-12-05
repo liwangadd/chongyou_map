@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提交帖子</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/registry.css}">
+</head>
+<body>
+
+<div class="container m-auto">
+
+    <h3 class="text-center" style="margin-top: 30px">提交话题帖子</h3>
+
+    <div class="form-group" style="margin-top: 30px">
+        <label for="topic">话题</label>
+        <select class="form-control" id="topic">
+            <option th:each="topic:${topics}" th:text="${topic.title}" th:value="${topic.id}"></option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="city">城市</label>
+        <input type="text" class="form-control" id="city">
+    </div>
+
+    <div class="form-group">
+        <label for="content">内容</label>
+        <textarea class="form-control" rows="3" id="content"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="position">城市</label>
+        <input type="text" class="form-control" id="position">
+    </div>
+
+    <button type="submit" class="btn btn-primary pull-right">提交</button>
+</div>
+
+
+</body>
+
+<script src="/js/bootstrap.js"/>
+
+</html>
