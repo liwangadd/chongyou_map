@@ -2,10 +2,11 @@
 <html html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>提交帖子</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
-    <link rel="stylesheet" th:href="@{/css/registry.css}">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=OH3rZFaBw2GZWxdpnhUUa5KDRkx2WLGk"></script>
 </head>
 <body>
 
@@ -30,7 +31,7 @@
     </div>
 
     <div class="form-group">
-        <label for="position">城市</label>
+        <label for="position">地点</label>
         <input type="text" class="form-control" id="position">
     </div>
 
@@ -40,6 +41,14 @@
 
 </body>
 
-<script src="/js/bootstrap.js"/>
+<script src="/js/bootstrap.js"></script>
 
 </html>
+
+<script type="text/javascript">
+
+    var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+        {"input" : "position"}
+        );
+
+</script>
